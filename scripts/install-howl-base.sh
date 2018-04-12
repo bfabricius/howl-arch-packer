@@ -34,7 +34,7 @@ if [[ -f ${ARM_TLC_AR} ]]; then
 	mkdir -p ${ARM_TLC_TGT}
 	cp ${ARM_TLC_AR} ${ARM_TLC_TGT}
 	cd ${ARM_TLC_TGT} && tar xjvf ${ARM_TLC_AR} && rm ${ARM_TLC_PKG} && cd
-	echo "[INFO] Provisoined system with Howl ARM Toolchain."
+	echo "[INFO] Provisioned system with Howl ARM Toolchain."
 else
 	echo "[ERROR] Could not locate ARM Toolchain source package at ${ARM_TLC_AR}."
 	exit 1
@@ -45,7 +45,7 @@ echo "==> Provisioning system with Howl Firmwaresender Tool"
 if [[ -f ${FWSNDR_BIN} ]]; then
 	mkdir -p ${FWSNDR_TGT}
 	cp ${FWSNDR_BIN} ${FWSNDR_TGT} && cd
-	echo "[INFO] Provisoined system with Howl Firmwaresender."	
+	echo "[INFO] Provisioned system with Howl Firmwaresender."	
 else
 	echo "[ERROR] Could not locate ARM Toolchain source package ${FWSNDR_BIN}."
 	exit 1
