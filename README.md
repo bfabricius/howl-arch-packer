@@ -1,12 +1,18 @@
 # howl-arch-packer
 
-Packer project to build a Vagrant Box for Howl, the virtual OWL build environment
+Packer project to build a Vagrant Box for Howl, the virtual OWL build environment.
 
 howl-arch-packer is a [Packer](https://www.packer.io/) project to automatically build a vagrant image to be used as virtual build environment for [Rebel Technologies OWL audio DSP patch](https://www.rebeltech.org/patch-library/patches/latest) cross compilation and deployment.
 
 Howl should build on any platform, but at this point in time it has only been tested on Mac OS X and the current master branch is still considered experimental and not stable.
 
 This work has been based on Aaaron Bull Shaefers [packer-arch](https://github.com/elasticdog/packer-arch), the rough specs for the virtual machine that is built have stayed the same for this project, take a look at his repository readme for [details](https://github.com/elasticdog/packer-arch/blob/master/README.md).
+
+## Howl Base and User SW
+The Howl image is a recent arch Linux provisioned with some user software and tools, see the following list
+* ARM cross compile toolchain
+* Howl Firmwaresender (htaudio.de CMake port of [firmwaresender](https://github.com/pingdynasty/FirmwareSender) for recent [JUCE 5.2](https://shop.juce.com/get-juce))
+* [OWLProgram](https://github.com/pingdynasty/OwlProgram) for audio DSP patch source compilation
 
 ## Howl on Vagrantcloud
 The htaudio-de/arch-howl pre-built box image is also hosted on Vagrantcloud. If you intend to use the Howl build environment only, we suggest you install the box from [vagrantcloud directly](https://app.vagrantup.com/htaudio-de/boxes/arch-howl).
@@ -19,7 +25,7 @@ In order to build a vagrant Howl image you need an internet connection. In addit
 
 Before proceeeding to the build, bootstrap the project for large files that are needed in the process but arent maintained in git by running
 
-    $ ./bootstrap.sh
+    $ ./bootstrap-lf.sh
 
 This Packer build template only supports virtualbox providers, extending the project templates for other supported providers such as VMWare for example should be straight forward.
 Once you have made sure you have all dependencies installed run the following (from the root source folder) to validate the Packer template and then build a new image:
