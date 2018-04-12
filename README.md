@@ -17,6 +17,10 @@ In order to build a vagrant Howl image you need an internet connection. In addit
 * [Packer](https://www.packer.io/), also available from Hashicorp
 * [VirtualBox](https://www.virtualbox.org/), a hypervisor (currently only supported provider)
 
+Before proceeeding to the build, bootstrap the project for large files that are needed in the process but arent maintained in git by running
+
+    $ ./bootstrap.sh
+
 This Packer build template only supports virtualbox providers, extending the project templates for other supported providers such as VMWare for example should be straight forward.
 Once you have made sure you have all dependencies installed run the following (from the root source folder) to validate the Packer template and then build a new image:
 
