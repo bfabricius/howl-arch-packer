@@ -15,6 +15,12 @@ echo "==> Installing libasound2"
 /usr/bin/pacman -S alsa-lib --noconfirm
 echo "==> Installing git"
 /usr/bin/pacman -S git --noconfirm
+echo "==> Installing python2"
+/usr/bin/pacman -S python2 --noconfirm
+echo "==> Installing python2-pip"
+/usr/bin/pacman -S python2-pip --noconfirm
+echo "==> Installing requests python module"
+/usr/bin/pip2 install requests
 
 # vagrant user needs to be in audio group
 echo "==> Adding vagrant user to audio group"
