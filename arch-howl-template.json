@@ -78,7 +78,7 @@
             "execute_command": "{{ .Vars }} sudo -E -S bash '{{ .Path }}'",
             "script": "scripts/install-howl-user-sw.sh",
             "environment_vars": [
-                "EXPORTS_SH=/vagrant/scripts/exports.sh",
+                "EXPORTS_SH=/howl/scripts/exports.sh",
                 "TLC_TOOLROOT=/opt/howl-tlc/gcc-arm-none-eabi-7-2017-q4-major/bin"
             ]            
         },
